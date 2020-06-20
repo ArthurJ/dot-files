@@ -11,7 +11,7 @@ alias rm='trash'
 alias cb='xclip -selection clipboard '
 alias vimdiff='nvim -d'
 alias vim='nvim'
-alias gotop='gotop -pasb'
+alias gotop='gotop -pas'
 
 set -U -x STUFF "$HOME/Stuff"
 set -U -x PATH $PATH:$STUFF:/local/bin
@@ -19,8 +19,9 @@ set -U -x PATH $PATH:$STUFF:/local/bin
 function renew_wall
     set -e wallpaper 
     set -U wallpaper (shuf -n 1 img.list) 
-    #feh --no-fehbg --bg-scale $wallpaper
-    hsetroot -cover $wallpaper
+    #hsetroot -cover $wallpaper
+    nitrogen --set-zoom-fill $wallpaper --head=0
+    nitrogen --set-zoom-fill $wallpaper --head=1
     wal -n -i $wallpaper
 end
 

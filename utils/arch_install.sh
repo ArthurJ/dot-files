@@ -1,4 +1,7 @@
 #git clone https://github.com/ArthurJ/Ambiente.git
+#git clone https://github.com/ArthurJ/dot-files.git
+
+#https://wiki.archlinux.org/index.php/Bluetooth_headset
 
 timedatectl set-ntp true
 
@@ -13,20 +16,38 @@ timedatectl set-ntp true
 #echo [Match] >> /etc/systemd/network/25-wireless.network
 #echo Name=wl* >> /etc/systemd/network/25-wireless.network
 
+sudo pacman -S cronie
+
+sudo pacman -S xfce4 xfce4-goodies
+sudo pacman -S lightdm lightdm-gtk-greeter xorg-server
+
 sudo pacman -S python python2 python-pip python2-pip 
 sudo pacman -S xterm xorg xorg-xinit trash-cli otf-fira-code #ttf-inconsolata
 sudo pacman -S ranger w3m hsetroot python-pywal 
-sudo pacman -S kitty grub-customizer
+sudo pacman -S grub-customizer
 sudo pacman -S neofetch fish numlockx 
-sudo pacman -S spectrwm dmenu
+sudo pacman -S dmenu
 sudo pacman -S xmonad xmonad-contrib xmobar
 
 sudo pacman -S python-pyqt5 qt5-base qt5ct python-qscintilla-qt5 
 
 sudo pacman -S alsa-oss alsa-utils
 sudo pacman -S v4l-utils
-sudo pacman -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils
+sudo pacman -S pulseaudio-alsa pulseaudio-bluetooth bluez-utils bluez-hid2hci
+
+systemctl enable cronie.service
 systemctl enable bluetooth
+
+sudo pacman -S stress
+sudo pacman -S lm_sensors
+sudo pacman -S nitrogen
+sudo pacman -S telegram-desktop
+sudo pacman -S steam
+sudo pacman -S ssh
+sudo pacman -S tree
+sudo pacman -S virtualbox
+sudo pacman -S git
+
 
 pip install neovim
 pip install autopep8
@@ -73,6 +94,12 @@ cd ~/Stuff
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
+
+
+yay -S visual-studio-code-bin
+yay -S thermald
+yay -S alacritty-ligatures
+
 
 yay -S autokey
 yay -S xclip 

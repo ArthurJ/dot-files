@@ -124,22 +124,6 @@ Ordem de eventos:
                 #    Option "XkbLayout" "br"
                 #    Option "XkbVariant" ""
                 #EndSection
-        - dwm ( https://stackoverflow.com/questions/31275672/how-to-install-dwm-in-arch-linux )
-            `pacman -S xorg-xinit xorg-server xorg git webkit2gtk`
-            `cd /usr/src`
-            `git clone git://git.suckless.org/dwm`
-            `git clone git://git.suckless.org/st`
-            `git clone git://git.suckless.org/dmenu`
-            `git clone git://git.suckless.org/surf`
-            `cd dwm && make clean install && cd ..`
-            `cd st && make clean install && cd ..`
-            `cd dmenu && make clean install && cd ..`
-            `cd surf && make clean install && cd ..`
-            `echo setxkbmap -model abnt2 -layout br >> /home/user/.xinitrc`
-            `echo exec dwm >> /home/user/.xinitrc`
-            `chown user /home/user/.xinitrc`
-            `startx`
-        
 
     `exit`
     `umount --all`
